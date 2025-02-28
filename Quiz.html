@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Quiz.css" rel="stylesheet" type="text/css">
+    <title>Saturno - quiz</title>
+</head>
+
+<body>
+    <h2 class="fade-in" id="QuizTitolo">Vediamo se hai imparato qualcosa...</h2>
+
+    <div class="fade-in" id="quizContainer">
+        <p id="quizProva">Caricamento della prova...</p>
+        
+        <button class="quizBtn" onclick="controllaRisposta(0)">Opzione 1</button>
+        <button class="quizBtn" onclick="controllaRisposta(1)">Opzione 2</button>
+        <button class="quizBtn" onclick="controllaRisposta(2)">Opzione 3</button>
+        <button class="quizBtn" onclick="controllaRisposta(3)">Opzione 4</button>
+    
+        <p id="quizRisultato"></p>
+    </div>
+    
+    <button class="fade-in" id="nextBtn" onclick="nuovaProva()">🔄 Prova un'altra domanda</button>
+    
+
+<p class="fade-in" id="link-home">
+    <a href="Titolo.html">Clicca qui per tornare alla home page 👽!</a>
+</p>
+
+<p class="fade-in" id="info-link">
+    <a href="Informazioni.html">Clicca qui per maggiori informazioni sul pianeta gassoso 👽!</a>
+</p>
+
+<script src="Quiz.js"></script>
+
+</body>

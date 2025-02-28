@@ -1,0 +1,82 @@
+/* Centrare il testo */
+body {
+    font-family: "Comfortaa", sans-serif;
+    background-color: #1a1a2e;
+    color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Titolo principale */
+#Titolo {
+    font-size: 100px;
+    font-weight: bold;
+    margin-top: 100px; /* Abbassa il titolo */
+    margin-bottom: 50px; /* Spazio sotto il titolo */
+}
+
+/* Stile del link */
+#info-link {
+    margin-top: 50px; /* Spazio sopra il link */
+}
+
+a {
+    color: #ff0000;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+a:hover {
+    color: #11e21c;
+}
+
+/* Pianeta Saturno */
+.saturno {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Anelli */
+.anelli {
+    width: 160px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(60deg);
+    animation: gira 5s linear infinite;
+}
+
+/* Animazione di rotazione */
+@keyframes gira {
+    from {
+        transform: translate(-50%, -50%) rotateX(60deg) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotateX(60deg) rotate(360deg);
+    }
+}
+
+.fade-in {
+    opacity: 0; /* Inizialmente invisibile */
+    animation: fadeInAnimation 1s ease-in forwards;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

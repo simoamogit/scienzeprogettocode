@@ -1,0 +1,90 @@
+body {
+    font-family: "Comfortaa", sans-serif;
+    background-color: #1a1a2e;
+    color: #f4f4f4;
+    text-align: center;
+    margin: 50px;
+    padding: 0;
+}
+
+#TitoloInfo {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Stile corretto per il link */
+#link-home {
+    margin-top: 500px; /* Aggiunge spazio sopra il link */
+}
+
+a {
+    font-family: 'Comfortaa', sans-serif;
+    color: #ff0000;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+a:hover {
+    color: #11e21c;
+}
+
+#Link-quiz {
+    margin-top: 35px;
+}
+
+/* From Uiverse.io by cssbuttons-io */ 
+button {
+    font-family: 'Comfortaa', sans-serif;
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #143055;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin-top: 80px;
+  }
+  
+  button:hover {
+    background-color: #ffffff;
+    box-shadow: 0px 15px 20px rgba(193, 219, 209, 0.4);
+    color: #000000;
+    transform: translateY(-7px);
+  }
+  
+  button:active {
+    transform: translateY(-1px);
+  }
+
+.fade-in {
+    opacity: 0; /* Inizialmente invisibile */
+    animation: fadeInAnimation 1s ease-in forwards;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
