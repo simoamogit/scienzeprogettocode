@@ -1,5 +1,6 @@
 html, body {
-    overflow: auto  
+    overflow-x: hidden; /* Evita lo scroll indesiderato */
+    background: black; /* Sfondo di base */
 }
 
 body {
@@ -13,14 +14,13 @@ body {
 }
 
 .stars {
-    width: 100%;
-    height: 100%; /* Cambiato da 100% a 100vh per evitare problemi */
-    position: fixed; /* Fissiamo le stelle allo sfondo */
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
     top: 0;
     left: 0;
-    pointer-events: none; /* Permette di cliccare e scorrere sotto */
-    overflow: hidden; /* Evita che le stelle creino problemi di scroll */
-    z-index: -1; /* Mette lo sfondo dietro a tutto */
+    pointer-events: none;
+    z-index: 0; /* Assicura che lo sfondo resti dietro */
 }
 
 .star {

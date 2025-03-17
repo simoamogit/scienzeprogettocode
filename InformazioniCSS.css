@@ -227,13 +227,22 @@ button:hover {
     margin: 0 auto; /* Per centrare orizzontalmente */
     height: 30vh; /* Imposta l'altezza al 5% dell'altezza dello schermo */
     width: auto; /* Mantiene le proporzioni dell'immagine */
+    transition: height 0.5s ease-in-out;
 }
 
+#divisionecassini:hover {
+    height: 80vh
+}
 #Titano {
     display: block; /* Assicura che l'immagine sia trattata come un elemento block */
     margin: 0 auto; /* Per centrare orizzontalmente */
     height: 40vh; /* Imposta l'altezza al 5% dell'altezza dello schermo */
     width: auto; /* Mantiene le proporzioni dell'immagine */
+    transition: height 0.5s ease-in-out;
+}
+
+#Titano:hover {
+    height: 70vh
 }
 
 #Elenco1 {
@@ -275,6 +284,11 @@ iframe {
     margin: 0 auto; /* Per centrare orizzontalmente */
     height: 25vh; /* Imposta l'altezza al 25% dell'altezza dello schermo */
     width: auto; /* Mantiene le proporzioni dell'immagine */
+    transition: height 0.5s ease-in-out;
+}
+
+#Encelado:hover {
+    height: 50vh
 }
 
 #uno {
@@ -282,5 +296,10 @@ iframe {
 }
 
 #Saturno {
-    height: 50vh
+    height: 50vh;
+    transition: height 0.5s ease-in-out;
+}
+
+#Saturno:hover {
+    height: 70vh
 }
