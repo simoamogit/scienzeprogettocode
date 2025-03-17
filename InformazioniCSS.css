@@ -276,3 +276,7 @@ iframe {
     height: 25vh; /* Imposta l'altezza al 25% dell'altezza dello schermo */
     width: auto; /* Mantiene le proporzioni dell'immagine */
 }
+
+#uno {
+    margin-top: 5vh;
+}

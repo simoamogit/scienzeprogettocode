@@ -31,6 +31,21 @@ const prove = [
         prova: "Gli anelli di Saturno sono composti principalmente da...", 
         opzioni: ["Ferro e Nichel", "Ghiaccio e Polvere", "Acqua e Roccia", "Gas"], 
         vero: 1 
+    },
+    { 
+        prova: "Qual è il settore predominante del sistema saturniano?",
+        opzioni: [
+            "Primario - dovuto ai grandi depositi di risorse",
+            "Secondario - dovuto alle numerose linee di montaggio sui diversi satelliti di Saturno",
+            "Terziario - dovuto alla qualità della vita insieme alle istituzioni stabili e le località turistiche",
+            "Non c'è una quarta opzione!"
+        ],
+        vero: 2
+    },
+    { 
+        prova: "Quante fasce di anelli ha Saturno?",
+        opzioni: ["7", "4", "9", "62"], 
+        vero: 0 
     }
 ];
 
@@ -46,6 +61,9 @@ function nuovaProva() {
     
     for (let i = 0; i < bottoni.length; i++) {
         bottoni[i].innerText = prove[index].opzioni[i];
+        bottoni[i].onclick = function() {
+            controllaRisposta(i);
+        };
     }
     
     document.getElementById("quizRisultato").innerText = "";
@@ -53,35 +71,41 @@ function nuovaProva() {
 
 // Controlla la risposta
 function controllaRisposta(scelta) {
-    let risultato = document.getElementById("quizRisultato");
+    let risultato = document.getElementById("quizRisultato"); // Definisci risultato
     
-    if (scelta === prove[provaCorrente].vero) {
-        risultato.innerHTML = "✅ Vero! Hai risposto correttamente!";
-        risultato.style.color = "green";
+    if (provaCorrente >= 0 && provaCorrente < prove.length) {
+        if (scelta === prove[provaCorrente].vero) {
+            risultato.innerHTML = "✅ Vero! Hai risposto correttamente!";
+            risultato.style.color = "green";
+        } else {
+            risultato.innerHTML = "❌ Falso! Riprova!";
+            risultato.style.color = "red";
+        }
     } else {
-        risultato.innerHTML = "❌ Falso! Riprova!";
-        risultato.style.color = "red";
+        console.error("Errore: provaCorrente fuori dai limiti!");
     }
 }
 
+// Effetto stelle di sfondo
 document.addEventListener("DOMContentLoaded", function () {
     const starContainer = document.querySelector(".stars");
 
-    for (let i = 0; i < 100; i++) {  // Modifica il numero di stelle se vuoi
+    for (let i = 0; i < 100; i++) {  
         let star = document.createElement("div");
         star.className = "star";
-        star.style.top = Math.random() * 100 + "vh"; // Posizione random verticale
-        star.style.left = Math.random() * 100 + "vw"; // Posizione random orizzontale
-        star.style.animationDuration = (Math.random() * 3 + 2) + "s"; // Effetto di "brillio" random
+        star.style.top = Math.random() * 100 + "vh"; 
+        star.style.left = Math.random() * 100 + "vw"; 
+        star.style.animationDuration = (Math.random() * 3 + 2) + "s"; 
         starContainer.appendChild(star);
     }
 });
 
+// Avviso per dispositivi mobili
 if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
     alert("Il sito non è ottimizzato per dispositivi mobili. Accedi da un computer!");
     document.body.innerHTML = "<h2 style='text-align: center; color: red;'>Accesso negato: usa un PC</h2>";
-  }
-
+}
 
 // Carica la prima prova all'avvio
 window.onload = nuovaProva;
+
