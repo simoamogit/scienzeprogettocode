@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="TitoloCSS.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
     <title>Saturno - home</title>
 </head>
 
 <body>
 
-    <h1 class="fade-in" id="Titolo">👽👽 SATURNO 👽👽</h1>
+    <h1 class="fade-in" id="Titolo">SATURNO</h1>
 
     <div class="fade-in" class="container">
         <div class="saturno">
@@ -17,10 +18,33 @@
         </div>
     </div>
 
-    <p class="fade-in" id="info-link">
+   <p class="fade-in" id="info-link">
         <a href="Informazioni.html">Clicca qui per maggiori informazioni sul pianeta gassoso 👽!</a>
     </p>
 
+    <div class="stars"></div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const starContainer = document.querySelector(".stars");
+
+    for (let i = 0; i < 100; i++) {  // Modifica il numero di stelle se vuoi
+        let star = document.createElement("div");
+        star.className = "star";
+        star.style.top = Math.random() * 100 + "vh"; // Posizione random verticale
+        star.style.left = Math.random() * 100 + "vw"; // Posizione random orizzontale
+        star.style.animationDuration = (Math.random() * 3 + 2) + "s"; // Effetto di "brillio" random
+        starContainer.appendChild(star);
+    }
+});
+
+    </script>
+<script>
+if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+    alert("Il sito non è ottimizzato per dispositivi mobili. Accedi da un computer!");
+    document.body.innerHTML = "<h2 style='text-align: center; color: red;'>Accesso negato: usa un PC</h2>";
+  }
+</script>
+
 </body>
 </html>
-
