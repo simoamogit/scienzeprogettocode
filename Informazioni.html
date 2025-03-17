@@ -5,16 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="InformazioniCSS.css" rel="stylesheet" type="text/css">
     <title>Saturno - Info</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+
+
 </head>
 
 <body>
 
     <h1 class="fade-in" id="TitoloInfo">👽 + INFO SUL PIANETA GASSOSO! 👽</h1>
 
-    <p class="fade-in">AGGIUNGI TESTO...</p>
-    
-    <button class="fade-in" onclick="alert('PROVA')">👽 Clicca qui per maggiori curiosità su Saturno! 👽</button>
+        
+    <h2 id="Intro" class="fade-in">INTRO</h2>
 
+    <p class="fade-in">Saturno è il sesto pianeta in ordine di distanza dal Sole, ed è il gigante gassoso.
+    </p>
+
+    <p class="fade-in">È molto noto per i suoi anelli e le sue meravigliose lune e, un ottimo posto per famiglie e bambini. Ciò non vuol dire che non sono accolti scienziati e ricercatori.</p>
+    <p class="fade-in">Infatti, la sua composizione e le sue numerose lune permettono ricerche mai eseguite prima. Con la presenza di ammoniaca, acetilene, etano, propano, fosfina e metano.</p>
+
+    <h1 id="Parte2" class="fade-in">LE CASE SU SATURNO</h1>
+    <li id="testocase" class="fade-in">Vivi un'esperienza unica tra gli anelli di Saturno nelle capsule MCS (Mimas Capsule System) </li>
+    <img src="divisionedicassini.png" alt="Divisione di Cassini" id="divisionecassini">
+
+    <h2 id="Lune" class="fade-in">Le Lune</h2>
+
+    <h3 id="sottotitolotitano" class="fade-in">TITANO</h3>
+
+    <li id="Elenco1" class="fade-in">Visita Titano per provare un'esperienza unica tra i suoi mari: l'oceano di Titano comincia a 100km sotto la superficie, <br> 
+        raggiungibile tramite gli appositi tunnel. <br> 
+        Inoltre l'atmosfera è stata trasformata grazie alle apposite strutture simili a quelle terrestri.
+    </li>
+
+
+    <img src="titano.png" alt="Titano" id="Titano">
+
+    <h1 id="Video" class="fade-in">Ecco un video riassuntivo su Titano!</h1>
+
+    <p id="sottotitolo" class="fade-in">Risalente al periodo precedente alla sua colonizzazione</p>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/w4Q7qPUeLkk?si=wI_tdkrPUyVSzhOm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <h3 id="sottotitoloencelado" class="fade-in">ENCELADO</h3>
+    
+    <li id="Elenco2" class="fade-in">La superficie di Encelado è composta da ghiaccio per i primi 5km con sotto un oceano che si estende per 65km. <br> Lo strato superificiale è principalmento liscio con eventuali crateri, solchi e criovulcani (un vulcano ghiacciato).<br> Sulla superficie ghiacciata è possibile costruire case ed impianti funzionanti tramite idrogeno grazie alla presenza di acqua</li>
+
+    <button class="fade-in" onclick="mostraPopup()">👽 Clicca qui per maggiori curiosità su Saturno! 👽</button>
+
+    
+
+
+    <!-- Popup che sarà visibile dopo aver cliccato il bottone -->
+    <div id="popup">
+        <p>Lo sapevi che il polo nord di Saturno è esagonale?</p>
+        <button onclick="chiudiPopup()">Chiudi</button>
+    </div>
+
+    <script>
+// Funzione per mostrare il popup con animazione in entrata
+function mostraPopup() {
+    let popup = document.getElementById("popup");
+    popup.style.display = "block";
+    gsap.fromTo(popup, 
+        { opacity: 0, scale: 0.8 }, // Stato iniziale
+        { opacity: 1, scale: 1, duration: 0.5, ease: "power2.out" } // Animazione verso lo stato finale
+    );
+}
+
+// Funzione aggiornata per nascondere il popup
+function chiudiPopup() {
+    let popup = document.getElementById("popup");
+
+    // Assicurati che il popup non resti visibile dopo l'animazione
+    gsap.to(popup, {
+        opacity: 0,
+        scale: 0.8, // Effetto di riduzione
+        duration: 0.5,
+        ease: "power2.in",
+        onComplete: () => {
+            popup.style.display = "none"; // Nasconde il popup definitivamente
+        }
+    });
+}
+
+        </script>
+
+<div class="stars"></div>
+    
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+const starContainer = document.querySelector(".stars");
+
+for (let i = 0; i < 100; i++) {  // Modifica il numero di stelle se vuoi
+    let star = document.createElement("div");
+    star.className = "star";
+    star.style.top = Math.random() * 100 + "vh"; // Posizione random verticale
+    star.style.left = Math.random() * 100 + "vw"; // Posizione random orizzontale
+    star.style.animationDuration = (Math.random() * 3 + 2) + "s"; // Effetto di "brillio" random
+    starContainer.appendChild(star);
+}
+});
+
+</script>
+
+<script>
+    if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+    alert("Il sito non è ottimizzato per dispositivi mobili. Accedi da un computer!");
+    document.body.innerHTML = "<h2 style='text-align: center; color: red;'>Accesso negato: usa un PC</h2>";
+  }
+</script>
+
+
+  
     <p class="fade-in" id="Link-quiz">
         <a href="Quiz.html">Clicca qui per fare un quiz su Saturno 👽!</a>
     </p>
@@ -23,6 +125,16 @@
     <p class="fade-in" id="link-home">
         <a href="Titolo.html">Clicca qui per tornare alla home page 👽!</a>
     </p>
+
+    <p class="fade-in" id="Link-mega">
+        <a href="https://mega.nz/fm/GqoQCThb">MEGA</a>
+    </p>
+
+    <p class="fade-in" id="Link-Github">
+        <a href="https://github.com/simoamogit/scienzeprogettocode/tree/main">REPO GITHUB</a>
+    </p>    
+
+    <a href="crediti.html">Crediti</a>
 
 </body>
 </html>
